@@ -808,22 +808,7 @@ $('#profileBtn').onclick=editProfile;
 
 /* ============================ SAMPLE DATA (first run) ============================ */
 function seedIfEmpty(){
-  if(DB.exercises.length||DB.workouts.length)return;
-  const e1={id:uid(),name:'Hammer Strength Brustpresse',category:'Brust',target:'Brust',secondary:['Trizeps','Schultern'],difficulty:'Mittel',maker:'Hammer Strength',desc:'Brustpresse an der Maschine.',notes:'Sitz Stufe 4',photos:[],cover:'',difficulty:'Mittel'};
-  const e2={id:uid(),name:'Latzug breit',category:'Rücken',target:'Latissimus',secondary:['Bizeps','Oberer Rücken'],difficulty:'Anfänger',maker:'',desc:'',notes:'Breiter Griff',photos:[],cover:''};
-  const e3={id:uid(),name:'Beinpresse',category:'Beine',target:'Quadrizeps',secondary:['Gesäß','Beinbeuger'],difficulty:'Mittel',maker:'',desc:'',notes:'',photos:[],cover:''};
-  DB.exercises=[e1,e2,e3];
-  const mk=(date,sets1,sets2)=>({id:uid(),date,duration:55,notes:'',entries:[
-    {exId:e1.id,exName:e1.name,sets:sets1},{exId:e3.id,exName:e3.name,sets:sets2}]});
-  const d=n=>new Date(Date.now()-n*864e5).toISOString().slice(0,10);
-  DB.workouts=[
-    mk(d(14),[{w:70,reps:12,rpe:7},{w:75,reps:10,rpe:8},{w:80,reps:8,rpe:9}],[{w:120,reps:12},{w:140,reps:10},{w:160,reps:8}]),
-    mk(d(7),[{w:75,reps:12,rpe:7},{w:80,reps:10,rpe:8},{w:85,reps:8,rpe:9}],[{w:130,reps:12},{w:150,reps:10},{w:170,reps:8}]),
-    mk(d(2),[{w:80,reps:12,rpe:7},{w:85,reps:10,rpe:8},{w:90,reps:9,rpe:9}],[{w:140,reps:12},{w:160,reps:10},{w:180,reps:8}]),
-  ];
-  DB.plans=[{id:uid(),name:'Push Day',type:'Push',items:[{exId:e1.id,exName:e1.name,targetSets:'3',targetReps:'8-12'}]}];
-  DB.workouts.forEach(w=>w.prs=[]);
-  save();
+
 }
 
 /* ============================ BOOT ============================ */
