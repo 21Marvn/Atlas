@@ -1,2 +1,0 @@
-# gym
-Eigene Gym App
